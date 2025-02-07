@@ -15,21 +15,17 @@ public class CalculatorWithNavigation {
 
     public static void main(String[] args) {
 
-       // AndroidDriver<AndroidElement> driver;
 
-        // Setup desired capabilities
         DesiredCapabilities caps = new DesiredCapabilities();
         caps.setCapability(MobileCapabilityType.PLATFORM_NAME, "Android");
-        caps.setCapability(MobileCapabilityType.DEVICE_NAME, "motorola moto g85 5G");
+        caps.setCapability(MobileCapabilityType.DEVICE_NAME, "Pixcel 9 Pro XL API 34");
         caps.setCapability("appPackage", "com.example.calculatorapp");
         caps.setCapability("appActivity", "com.example.calculatorapp.MainActivity");
         caps.setCapability(MobileCapabilityType.AUTOMATION_NAME, "UiAutomator2");
 
         try {
-            // Initialize the Appium driver
         	 AppiumDriver driver = new AndroidDriver(new URL("http://127.0.0.1:4723"), caps);
 
-            // Perform addition operation
         	 WebElement num1Field = driver.findElement(By.id("com.example.calculatorapp:id/etFirstNumber"));
         	 System.out.println("NumField 1 : "+num1Field);
               num1Field.sendKeys("5");
@@ -40,7 +36,6 @@ public class CalculatorWithNavigation {
               WebElement addButton = driver.findElement(By.id("com.example.calculatorapp:id/btnAdd"));
             addButton.click();
 
-            // Navigate to the second screen
             WebElement navigateButton = driver.findElement(By.id("com.example.calculatorapp:id/btnNavigate"));
             navigateButton.click();
 
